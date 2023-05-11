@@ -1,0 +1,874 @@
+@import "./variables";
+@import "./mixin";
+
+main {
+    @media screen and (max-width: 992px) {
+        margin: 0px 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0px 40px;
+    }
+
+    @media screen and (max-width: 650px) {
+        margin: 0px 20px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin: 0px 16px;
+
+    }
+
+    .account_row {
+        @media screen and (max-width: 992px) {
+            grid-template-columns: 72% 27%;
+        }
+    }
+}
+
+// Order history page
+.account_row {
+    .account_col_left {
+
+        .account_col_left_form {
+            padding: 20px !important;
+            padding-top: 0px !important;
+            position: relative;
+
+            @media screen and (max-width: 1100px) {
+                padding: 10px !important;
+                padding-top: 0px !important;
+            }
+
+            @media screen and (max-width: 576px) {
+                width: 100vw;
+                margin-left: -20px;
+                border-radius: 0px;
+            }
+
+            @media screen and (max-width: 500px) {
+                padding: 16px !important;
+                padding-top: 16px !important;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin-left: -16px;
+            }
+
+            @media screen and (max-width: 450px) {
+                padding: 10px !important;
+                padding-top: 10px !important;
+            }
+
+        }
+    }
+}
+
+.account_col_left_form_header,
+.history_item_header {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 14% 14% 24% 25% 19%;
+    column-gap: 1%;
+    width: 100%;
+
+    @media screen and (max-width: 650px) {
+        grid-template-columns: 14% 14% 24% 26% 18%;
+    }
+
+    @media screen and (max-width: 576px) {
+        grid-template-columns: 14% 14% 23% 25% 20%;
+    }
+
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+}
+
+.account_col_left_form_header {
+    padding: 10px 20px;
+    background-color: $cBlueFaded;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+
+    @media screen and (max-width: 1200px) {
+        padding: 8px 16px;
+    }
+
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
+
+    span {
+        @include boldText18;
+        color: $cOrange;
+        user-select: none;
+
+        &:first-of-type {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 17px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            font-size: 17px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 15px;
+
+            &:first-of-type {
+                padding-left: 10px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+
+            &:first-of-type {
+                padding-left: 0px;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            font-size: 13px;
+        }
+    }
+}
+
+.account_col_left_form_history {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 17px;
+
+    h2 {
+        @include boldText22;
+        color: white;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+
+        @media screen and (max-width: 1100px) {
+            padding-bottom: 30px;
+        }
+
+        @media screen and (max-width: 500px) {
+            padding-top: 30px;
+        }
+    }
+
+    // Order item
+    .account_col_left_form_history_item {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+
+        @media screen and (max-width: 1200px) {
+            padding: 16px;
+        }
+
+        @media screen and (max-width: 992px) {
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 500px) {
+            padding: 16px;
+        }
+
+        @media screen and (max-width: 400px) {
+            padding: 10px;
+        }
+
+        // Order item header
+        .history_item_header {
+            @media screen and (max-width: 500px) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 10px;
+            }
+
+            .history_item_header_row {
+                @media screen and (max-width: 500px) {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 7px;
+                }
+
+                span {
+                    &:first-of-type {
+                        display: none;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        &:first-of-type {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            span {
+                @include boldText16;
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 16px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 15px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    font-size: 13px;
+                }
+
+                @media screen and (max-width: 850px) {
+                    font-size: 12px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    font-size: 13px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    font-size: 22px;
+                    font-weight: 100;
+
+                }
+
+                @media screen and (max-width: 450px) {
+                    font-size: 20px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    font-size: 19px;
+                }
+            }
+
+            .history_item_header_date {
+                display: flex;
+                justify-content: flex-start;
+
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
+            }
+
+            .history_item_header_id {
+                @media screen and (max-width: 500px) {
+                    color: $cTextBlackSecondary;
+                    font-weight: bold;
+                }
+
+                span {
+                    display: none;
+
+                    @media screen and (max-width: 500px) {
+                        color: $cTextBlackSecondary;
+                        display: inline-block;
+                        margin-left: 5px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .history_item_header_show_btn {
+                @include mainButton;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 13px;
+                width: 100%;
+                padding: 7px 35px;
+
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    min-width: 12px;
+                    min-height: 12px;
+                    mask-size: contain;
+                    mask-image: url(../icon/arrow_down.svg);
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    background-color: $cBlue;
+                    transition: all 0.3s ease-in-out;
+                    transform: scaleY(-1);
+                }
+
+                &:hover {
+                    box-shadow: 0 4px 17px 0 $cOrange;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    padding: 7px 30px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    padding: 7px 15px;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+
+                    &:active {
+                        box-shadow: 0 4px 17px 0 $cOrange;
+                    }
+                }
+
+                @media screen and (max-width: 850px) {
+                    column-gap: 8px
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 7px 10px;
+                }
+
+                @media screen and (max-width: 650px) {
+                    column-gap: 4px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    padding: 10px 0px;
+                    column-gap: 15px;
+                    margin-top: 10px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 13px;
+                    color: $cBlue;
+                    text-transform: uppercase;
+                    font-weight: bold;
+
+                    @media screen and (max-width: 1300px) {
+                        font-size: 12px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 10px;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 15px;
+                    }
+                }
+
+                .history_item_header_show_btn_desktop {
+                    @media screen and (max-width: 992px) {
+                        display: none;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        display: inline-block;
+                    }
+                }
+
+                .history_item_header_show_btn_tablet {
+                    display: none;
+
+                    @media screen and (max-width: 992px) {
+                        display: inline-block;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        display: none;
+                    }
+                }
+            }
+
+            .history_item_header_show_btn_active {
+                background-color: #A5A5A5;
+
+                &::after {
+                    transform: scaleY(1);
+                }
+            }
+        }
+
+        // Order item hidden
+        .history_item_hidden {
+            display: none;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid $cBorderGray;
+
+            .history_item_hidden_title_detail,
+            .history_item_hidden_title_product {
+                @include headerWithIcon;
+                color: $cBlue;
+                display: inline-block;
+                margin-bottom: 10px;
+
+                @media screen and (max-width: 1400px) {
+                    margin-bottom: 15px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 19px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    padding-left: 28px;
+                    margin-bottom: 10px;
+                    font-size: 17px;
+
+                    &::before {
+                        width: 17px;
+                        height: 17px;
+                    }
+                }
+
+                @media screen and (max-width: 450px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .history_item_hidden_title_detail {
+                &::before {
+                    background-color: $cBlue;
+                    mask-image: url(../icon/my_cart_info_icon.svg);
+                }
+
+                @media screen and (max-width: 768px) {
+                    margin-bottom: 15px;
+                }
+
+            }
+
+            .history_item_hidden_title_product {
+                margin-bottom: 15px;
+
+                &::before {
+                    background-color: $cBlue;
+                    mask-image: url(../icon/my_cart_wheelbarrow_icon.svg);
+                }
+
+                @media screen and (max-width: 768px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            // Order info
+            .history_item_hidden_info {
+                padding-bottom: 5px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid $cBorderGray;
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+
+                @media screen and (max-width: 1280px) {
+                    row-gap: 6px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    row-gap: 10px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    row-gap: 14px;
+                }
+
+                div {
+                    display: grid;
+                    grid-template-columns: 150px 1fr;
+                    column-gap: 2%;
+
+                    @media screen and (max-width: 900px) {
+                        grid-template-columns: 130px 1fr;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        grid-template-columns: 150px 1fr;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        grid-template-columns: 130px 1fr;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        grid-template-columns: 105px 1fr;
+                        column-gap: 10px;
+                    }
+
+                    span {
+                        @include boldText18;
+                        font-family: $fHeaderRegular;
+                        font-weight: 900;
+                        width: fit-content;
+
+                        &:last-of-type {
+                            font-family: $fRegular;
+                            font-weight: 400;
+                            white-space: normal;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 15px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 16px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 15px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .history_item_hidden_info_liqpay {
+                        form {
+                            input[type="image"] {
+                                height: 40px;
+
+                                @media screen and (max-width: 992px) {
+                                    height: 35px;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    height: 40px;
+                                }
+
+                                @media screen and (max-width: 375px) {
+                                    height: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .payment_info {
+                    @media screen and (max-width: 500px) {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            .history_item_hidden_header,
+            .history_item_hidden_products>li {
+                display: grid;
+                justify-content: space-between;
+                align-items: center;
+                grid-template-columns: 60px 250px 1fr 1fr 1fr;
+                column-gap: 15px;
+                width: 100%;
+
+                @media screen and (max-width: 1300px) {
+                    grid-template-columns: 60px 200px 1fr 1fr 1fr;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    grid-template-columns: 45px 1.5fr 60px 1fr 0.8fr;
+                    column-gap: 10px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    grid-template-columns: 45px 1.5fr 60px 1.2fr 0.6fr;
+                }
+
+                @media screen and (max-width: 992px) {
+                    grid-template-columns: 45px 1.3fr 60px 1.1fr 0.8fr;
+                }
+
+                @media screen and (max-width: 850px) {
+                    grid-template-columns: 40px 1.3fr 50px 1.1fr 0.8fr;
+                }
+
+                @media screen and (max-width: 500px) {
+                    grid-template-columns: 50px 1fr;
+                    row-gap: 10px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    row-gap: 15px;
+                }
+            }
+
+            .history_item_hidden_header {
+                background-color: rgb(217, 217, 217);
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                padding: 8px 10px;
+                padding-bottom: 18px;
+                margin-bottom: -10px;
+
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
+
+                span {
+                    @include boldText16;
+                    text-align: center;
+
+                    &:last-of-type {
+                        text-align: right;
+                        padding-right: 20px;
+                    }
+
+                    @media screen and (max-width: 1200px) {
+                        font-size: 15px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 14px;
+
+                        &:last-of-type {
+                            padding-right: 10px;
+                        }
+                    }
+
+                    @media screen and (max-width: 850px) {
+                        font-size: 13px;
+                    }
+                }
+
+                .history_item_hidden_header_img {
+                    min-width: 60px;
+
+                    @media screen and (max-width: 1200px) {
+                        min-width: 45px;
+                    }
+
+                    @media screen and (max-width: 850px) {
+                        min-width: 40px;
+                    }
+                }
+            }
+
+            // Order product list
+            .history_item_hidden_products {
+                display: flex;
+                flex-direction: column;
+                background-color: $cBlue;
+                border-radius: 8px;
+                list-style-type: none;
+                overflow: hidden;
+                padding: 0px 10px;
+
+                li {
+                    list-style-type: none;
+                    border-bottom: 1px solid $cBorderGray;
+                    padding: 10px 0px;
+
+                    &:last-of-type {
+                        border-bottom: none;
+                    }
+
+                    @media screen and (max-width: 500px) {
+
+                        &:last-of-type {
+                            padding-top: 0;
+                        }
+                    }
+
+                    .history_item_hidden_products_li_image {
+                        border-radius: 5px;
+                        overflow: hidden;
+                        width: 60px;
+                        height: 60px;
+                        display: inline-block;
+                        transition: all 0.3s ease-in-out;
+                        outline: 1px solid transparent;
+
+                        &:hover {
+                            outline: 1px solid $cOrange;
+
+                            img {
+                                opacity: 0.9;
+                            }
+                        }
+
+                        @media screen and (max-width: 1200px) {
+                            width: 45px;
+                            height: 45px;
+                        }
+
+                        @media screen and (max-width: 850px) {
+                            width: 40px;
+                            height: 40px;
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            width: 50px;
+                            height: 50px;
+                        }
+
+                        img {
+                            @include imageContain;
+                            background-color: white;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+
+                    .history_item_hidden_products_li_name,
+                    p {
+                        @include plainText14;
+                        font-weight: bold;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 13px;
+                        }
+
+                        @media screen and (max-width: 1100px) {
+                            font-size: 12px;
+                        }
+
+                        @media screen and (max-width: 850px) {
+                            font-size: 11px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 13px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 12px;
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            font-size: 16px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 15px;
+                        }
+                    }
+
+                    p {
+
+                        // Hide quantity col on mobile
+                        &:first-of-type {
+                            @media screen and (max-width: 500px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .history_item_hidden_products_li_name {
+                        transition: all 0.3s ease-in-out;
+                        justify-content: flex-start;
+                        color: $cBlueLinks;
+
+                        &:active,
+                        &:hover {
+                            color: $cOrange;
+                        }
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 12px;
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            font-size: 16px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 14px;
+                        }
+
+                    }
+
+                    .history_item_hidden_products_li_price_per_unit {
+                        @media screen and (max-width: 500px) {
+                            white-space: nowrap;
+                            position: relative;
+                            left: 60px;
+                            justify-content: flex-start;
+                        }
+
+                        @media screen and (max-width: 425px) {
+                            left: 0px;
+
+                        }
+
+                        span {
+                            &:last-of-type {
+                                display: none;
+                            }
+
+                            @media screen and (max-width: 500px) {
+
+                                &:first-of-type {
+                                    display: none;
+                                }
+
+                                &:last-of-type {
+                                    display: inline-block;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                    }
+
+                    .history_item_hidden_products_li_summa,
+                    .history_item_hidden_products_li_total {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    .history_item_hidden_products_li_summa {
+                        @include boldText18;
+                        white-space: nowrap;
+                        color: white;
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 15px;
+                        }
+
+                        @media screen and (max-width: 1100px) {
+                            font-size: 14px;
+                        }
+
+                        @media screen and (max-width: 850px) {
+                            font-size: 13px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 15px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 14px;
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

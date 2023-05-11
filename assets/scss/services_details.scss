@@ -1,0 +1,461 @@
+@import "./variables";
+@import "./mixin";
+
+main {
+
+    // Intro
+    .servicesIntro {
+        width: 100vw;
+        position: relative;
+        z-index: 1;
+        background-color: rgba($color: $cBlue, $alpha: 0.6);
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: fit-content;
+        min-height: fit-content;
+
+        @media screen and (max-width: 576px) {
+            background-color: rgba($color: $cBlue, $alpha: 0.7);
+        }
+
+        .servicesIntro_info {
+            width: 100%;
+            padding-top: 123px;
+            padding-bottom: 100px;
+            position: relative;
+
+            @media screen and (max-width: 1400px) {
+                padding-top: 110px;
+            }
+
+            @media screen and (max-width: 1280px) {
+                padding-top: 100px;
+            }
+
+            @media screen and (max-width: 1200px) {
+                padding-top: 90px;
+            }
+
+            @media screen and (max-width: 992px) {
+                padding-top: 50px;
+            }
+
+            @media screen and (max-width: 576px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            @media screen and (max-width: 500px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            @media screen and (max-width: 450px) {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .servicesIntro_info_block {
+                @include mainContainer;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                row-gap: 20px;
+
+                @media screen and (max-width: 1400px) {
+                    padding-left: 70px;
+                }
+
+                @media screen and (max-width: 1280px) {
+                    row-gap: 15px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    padding-left: 35px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding-left: 0px;
+                    row-gap: 25px;
+                }
+
+                // Back link
+                .servicesIntro_info_block_back {
+                    @include backLink;
+                }
+
+                .servicesIntro_info_block_item {
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+
+                    @media screen and (max-width: 1400px) {
+                        width: 65%;
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        width: 70%;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        width: 75%;
+                    }
+
+                    @media screen and (max-width: 992px) {
+                        width: 80%;
+                    }
+
+                    @media screen and (max-width: 800px) {
+                        width: 90%;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+
+                    // Main title
+                    h1 {
+                        @include headerText50;
+                        color: white;
+                        font-weight: 100;
+                        margin-bottom: 20px;
+
+                        @media screen and (max-width: 1200px) {
+                            margin-bottom: 15px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            line-height: 100%;
+                            padding-top: 40px;
+                            margin-bottom: 25px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            line-height: 120%;
+                        }
+                    }
+
+                    p {
+                        @include plainText20;
+                        color: white;
+                        line-height: 32px;
+                        padding-right: 140px;
+
+                        @media screen and (max-width: 1450px) {
+                            font-size: 22px;
+                        }
+
+                        @media screen and (max-width: 1280px) {
+                            font-size: 20px;
+                        }
+
+                        @media screen and (max-width: 992px) {
+                            font-size: 18px;
+                            padding-right: 100px;
+                        }
+
+                        @media screen and (max-width: 800px) {
+                            padding-right: 80px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 22px;
+                            padding-right: 40px;
+                        }
+
+                        @media screen and (max-width: 650px) {
+                            padding-right: 0px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 20px;
+                            line-height: 28px;
+                        }
+                    }
+
+                    // КОНСУЛЬТАЦІЯ ТА ЗАМОВЛЕННЯ
+                    .servicesIntro_info_block_item_subtitle {
+                        @include boldText18;
+                        color: $cOrange;
+                        text-transform: uppercase;
+                        position: relative;
+                        margin-top: 35px;
+                        padding-left: 37px;
+                        margin-bottom: 15px;
+
+                        &::before {
+                            width: 23px;
+                            height: 23px;
+                            mask-size: contain;
+                            mask-repeat: no-repeat;
+                            mask-position: center;
+                            background-color: $cOrange;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: row;
+                            transition: all 0.3s ease-in-out;
+                            content: '';
+                            position: absolute;
+                            top: -1px;
+                            left: 0px;
+                            mask-image: url(../icon/contact_phone.svg);
+                        }
+
+                        @media screen and (max-width: 1400px) {
+                            font-size: 18px;
+                        }
+
+                        @media screen and (max-width: 1200px) {
+                            margin-top: 30px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 26px;
+                            padding-left: 34px;
+
+                            &::before {
+                                top: 5px;
+                            }
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 22px;
+                            padding-left: 30px;
+
+                            &::before {
+                                width: 19px;
+                                height: 19px;
+                            }
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            width: fit-content;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 20px;
+                            padding-left: 26px;
+
+                            &::before {
+                                width: 17px;
+                                height: 17px;
+                            }
+                        }
+
+                        @media screen and (max-width: 400px) {
+                            font-size: 18px;
+                            padding-left: 23px;
+
+                            &::before {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+
+                        @media screen and (max-width: 370px) {
+                            font-size: 16px;
+                            padding-left: 20px;
+
+                            &::before {
+                                width: 13px;
+                                height: 13px;
+                            }
+                        }
+                    }
+
+                    .servicesIntro_info_block_item_row {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 10px;
+                        padding-left: 37px;
+
+                        @media screen and (max-width: 768px) {
+                            padding-left: 37px;
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            padding-left: 0px;
+                            align-items: center;
+                        }
+
+                        .servicesIntro_info_block_item_row_number {
+                            @include boldText20;
+                            color: white;
+                            transition: all 0.3s ease-in-out;
+                            width: fit-content;
+                            letter-spacing: 1px;
+
+                            &:hover {
+                                color: $cOrange;
+
+                                &::before {
+                                    background-color: $cOrange;
+                                }
+                            }
+
+                            @media screen and (max-width: 1400px) {
+                                font-size: 20px;
+                            }
+
+                            @media screen and (max-width: 768px) {
+                                font-size: 30px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                text-shadow: rgba(0, 0, 0, 0.668) 2px 2px 10px;
+                                font-size: 26px;
+                            }
+
+                            @media screen and (max-width: 500px) {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Content
+    .servicesContent {
+        margin: 0 auto;
+        max-width: 1920px;
+        display: flex;
+        justify-content: center;
+        padding: 0px 55px;
+        padding-top: 65px;
+        padding-bottom: 100px;
+        column-gap: 2%;
+
+        @media screen and (max-width: 1200px) {
+            padding-top: 55px;
+        }
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column-reverse;
+            row-gap: 40px;
+            padding: 0px 40px;
+            padding-top: 40px;
+            padding-bottom: 120px;
+        }
+
+        @media screen and (max-width: 450px) {
+            padding-top: 30px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-bottom: 140px;
+
+        }
+
+        // Images
+        .servicesContent_images {
+            column-count: 2;
+            column-gap: 17px;
+            width: 48.5%;
+
+            @media screen and (max-width: 1200px) {
+                column-gap: 12px;
+            }
+
+            @media screen and (max-width: 992px) {
+                column-count: 1;
+                width: 30%;
+            }
+
+            @media screen and (max-width: 768px) {
+                column-count: 2;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 450px) {
+                column-count: 1;
+            }
+
+            .servicesContent_images_item {
+                width: 100%;
+                height: fit-content;
+                border: 3px solid #383838;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                margin-bottom: 17px;
+
+                @media screen and (max-width: 1200px) {
+                    margin-bottom: 12px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    margin-bottom: 17px;
+                }
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+
+        // Text
+        .servicesContent_text {
+            font-size: 20px;
+            line-height: 150%;
+            padding-right: 15vw;
+            width: 48.5%;
+
+            @media screen and (min-width: 1921px) {
+                padding-right: 50px;
+            }
+
+            @media screen and (max-width: 1600px) {
+                padding-right: 10vw;
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: 1400px) {
+                line-height: 140%;
+                padding-right: 5vw;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 16px;
+                padding-right: 0vw;
+            }
+
+            @media screen and (max-width: 992px) {
+                font-size: 22px;
+                width: 66.5%;
+            }
+
+            @media screen and (max-width: 900px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 800px) {
+                font-size: 19px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 18px;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 576px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 450px) {
+                font-size: 22px;
+            }
+        }
+    }
+}

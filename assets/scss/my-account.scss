@@ -1,0 +1,693 @@
+@import "./variables";
+@import "./mixin";
+
+@mixin accountHeaderButton {
+    width: 100%;
+    height: 89px;
+    margin-bottom: 13px;
+    border-radius: 8px;
+    border: 1px solid #A5A5A5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    pointer-events: none;
+
+    @media screen and (max-width: 1600px) {
+        height: 65px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        height: 55px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        margin-bottom: 10px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 25px;
+        pointer-events: visible;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:focus-visible,
+    &:active,
+    &:focus {
+        outline: none !important;
+        border: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        border: 1px solid #A5A5A5 !important;
+    }
+
+    span {
+        @include boldText20;
+        font-family: $fHeaderRegular;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: white;
+        position: relative;
+        font-weight: bold;
+
+        &::before {
+            width: 23px;
+            height: 23px;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            transition: all 0.3s ease-in-out;
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            &::before {
+                width: 18px;
+                height: 18px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 16px;
+
+            &::before {
+                width: 15px;
+                height: 15px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            font-size: 16px;
+
+            &::before {
+                width: 13px;
+                height: 13px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 16px;
+
+            &::before {
+                width: 12px;
+                height: 12px;
+                top: 3px;
+            }
+        }
+    }
+}
+
+main {
+    @include mainContainer;
+    padding-top: 130px;
+    padding-bottom: 100px;
+
+    @media screen and (max-width: 1600px) {
+        padding-top: 120px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding-top: 105px;
+    }
+
+    @media screen and (max-width: 1120px) {
+        padding-top: 85px;
+    }
+
+    @media screen and (max-width: 992px) {
+        padding-top: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0px 70px;
+        padding-bottom: 120px;
+    }
+
+    @media screen and (max-width: 650px) {
+        margin: 0px 60px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: 0px 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding-bottom: 140px;
+    }
+
+    @media screen and (max-width: 400px) {
+        margin: 0px 25px;
+    }
+
+    @media screen and (max-width: 375px) {
+        margin: 0px 16px;
+    }
+
+    // Main header
+    h1 {
+        @include headerText40;
+        font-family: $fHeaderRegular;
+        text-transform: uppercase;
+        margin-bottom: 21px;
+
+        @media screen and (max-width: 1280px) {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 40px;
+            margin-bottom: 21px;
+        }
+
+        @media screen and (max-width: 450px) {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 34px;
+        }
+    }
+
+    // Wrapper row
+    .account_row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 73% 25%;
+        justify-content: space-between;
+
+        @media screen and (max-width: 992px) {
+            grid-template-columns: 69% 29%;
+        }
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column-reverse;
+            row-gap: 25px;
+        }
+    }
+
+    // Left side form
+    .account_col_left {
+        .account_col_left_header {
+            @include accountHeaderButton;
+            background-color: $cBlueFaded;
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 15px;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin-bottom: 10px;
+            }
+        }
+
+        .account_col_left_form {
+            border: 1px solid #A5A5A5;
+            background-color: $cBlueFaded;
+            border-radius: 8px;
+            padding: 40px;
+            padding-top: 55px;
+
+            @media screen and (max-width: 1600px) {
+                padding: 35px;
+            }
+
+            @media screen and (max-width: 1280px) {
+                padding: 30px;
+            }
+
+            @media screen and (max-width: 992px) {
+                padding: 30px 25px;
+            }
+
+            @media screen and (max-width: 850px) {
+                padding: 30px 20px;
+            }
+
+            @media screen and (max-width: 768px) {
+                padding: 40px 70px;
+                padding-top: 60px;
+            }
+
+            @media screen and (max-width: 650px) {
+                padding: 30px 50px;
+                padding-top: 50px;
+            }
+
+            @media screen and (max-width: 500px) {
+                padding: 30px;
+                padding-top: 50px;
+            }
+
+            @media screen and (max-width: 450px) {
+                padding: 30px 20px;
+                padding-top: 40px;
+            }
+
+            .form_col_success {
+                @include plainText16;
+                font-weight: bold;
+                margin: 0 auto;
+                width: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                color: white;
+                background-color: #26900038;
+                border: 2px solid #269000;
+                border-radius: 13px;
+                padding: 11px 30px;
+                margin-top: -25px;
+                margin-bottom: 50px;
+                text-align: center;
+
+                @media screen and (max-width: 1600px) {
+                    margin-top: -10px;
+                }
+
+                @media screen and (max-width: 1400px) {
+                    padding: 8px 25px;
+                    margin-bottom: 40px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    padding: 5px 15px;
+                    font-size: 12px;
+                    border-radius: 8px;
+                    margin-bottom: 30px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 10px 30px;
+                    font-size: 16px;
+                    border-radius: 13px;
+                    margin-top: -30px;
+                    margin-bottom: 50px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    margin-top: -15px;
+                    font-size: 15px;
+                    padding: 10px 20px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    font-size: 14px;
+                }
+            }
+
+            // Form message
+            .account_col_left_form_title {
+                @include plainText20;
+                color: white;
+                position: relative;
+                display: inline-block;
+                line-height: 23.44px;
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 16px;
+                    line-height: 21px;
+                }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    font-size: 13px;
+                }
+            }
+
+            .account_col_left_form_row {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 45%);
+                justify-content: space-between;
+
+                @media screen and (max-width: 850px) {
+                    grid-template-columns: repeat(2, 47%);
+                }
+
+                @media screen and (max-width: 768px) {
+                    grid-template-columns: 100%;
+                    row-gap: 40px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    row-gap: 35px;
+                }
+
+                .account_col_left_form_col {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 30px;
+                    justify-content: space-between;
+
+                    @media screen and (max-width: 1100px) {
+                        row-gap: 21px;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        row-gap: 40px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        row-gap: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Sidebar
+    .account_sidebar {
+        height: fit-content;
+        position: sticky;
+        top: 13px;
+
+        @media screen and (max-width: 992px) {
+            top: 95px;
+        }
+
+        @media screen and (max-width: 768px) {
+            position: relative;
+            top: 0;
+        }
+
+        // Account sidebar header
+        .account_sidebar_header {
+            @include accountHeaderButton;
+            background-color: $cBlue;
+            position: relative;
+
+            &::before {
+                width: 19px;
+                height: 10px;
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-image: url(../icon/arrow_down.svg);
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                transition: all 0.3s ease-in-out;
+                content: '';
+                position: absolute;
+                right: 24px;
+                display: none;
+                top: 50%;
+                transform: translateY(-50%) scaleY(1);
+                background-color: $cTextBlack;
+            }
+
+            @media screen and (max-width: 768px) {
+                height: 60px;
+                background-color: $cOrange;
+                z-index: 2;
+                position: relative;
+                pointer-events: visible;
+                margin-bottom: 0;
+
+                span {
+                    color: $cTextBlack;
+                    font-size: 20px;
+                }
+
+                &::before {
+                    display: flex;
+                }
+            }
+        }
+
+        .account_sidebar_header_open {
+            &::before {
+                transform: translateY(-50%) scaleY(-1);
+            }
+        }
+
+        // Sidebar links block
+        .account_sidebar_block {
+            background-color: $cBlue;
+            border-radius: 8px;
+            border: 1px solid #A5A5A5;
+            padding: 50px 25px;
+            padding-bottom: 40px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+
+            @media screen and (max-width: 1400px) {
+                padding: 40px 20px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                padding: 30px 20px;
+            }
+
+            @media screen and (max-width: 992px) {
+                padding: 25px 20px;
+            }
+
+            @media screen and (max-width: 800px) {
+                padding: 20px 15px;
+            }
+
+
+            @media screen and (max-width: 768px) {
+                margin-top: -10px;
+                padding: 0px;
+                padding-top: 40px;
+                padding-bottom: 30px;
+                z-index: -1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+            }
+
+            @media screen and (max-width: 576px) {
+                padding: 30px 50px;
+                padding-bottom: 20px;
+            }
+
+            @media screen and (max-width: 450px) {
+                padding: 30px;
+                padding-bottom: 20px;
+            }
+
+            @media screen and (max-width: 375px) {
+                padding: 30px 20px;
+                padding-bottom: 20px;
+            }
+
+            .account_sidebar_block_links {
+                display: flex;
+                flex-direction: column;
+                row-gap: 28px;
+                margin-bottom: 70px;
+
+                @media screen and (max-width: 1280px) {
+                    row-gap: 22px;
+                    margin-bottom: 50px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    margin-bottom: 40px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    align-items: center;
+                    margin-bottom: 50px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    margin-bottom: 40px;
+                }
+
+                a {
+                    @include boldText18;
+                    font-family: $fHeader;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: all 0.3s ease-in-out;
+                    user-select: none;
+
+                    &:hover {
+                        color: $cOrange;
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        font-size: 14px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 13px;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 20px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 18px;
+                    }
+                }
+
+                .account_sidebar_block_links_active {
+                    color: $cOrange;
+                    pointer-events: none;
+
+                    &:hover {
+                        cursor: default;
+                    }
+                }
+            }
+
+            .account_sidebar_block_logout {
+                @include mainButton;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+                background-color: transparent;
+                color: white;
+                width: 100%;
+                font-size: 17px;
+                border: 2px solid #F21B1B;
+
+                &:hover {
+                    border: 2px solid #a41414;
+                    background-color: $cBlueDark;
+                    color: whitesmoke;
+                    box-shadow: 0 7px 25px 0 $cShadow;
+                }
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 15px;
+                    padding: 14px 25px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 13px;
+                    padding: 10px 25px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                    padding: 15px 40px;
+                    width: fit-content;
+                }
+
+                @media screen and (max-width: 450px) {
+                    font-size: 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.submit_login_disable {
+    pointer-events: none;
+}
+
+.success_password_update {
+    @include boldText24;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: -120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $cOrange;
+    z-index: 100000;
+    padding: 20px 40px;
+    box-shadow: 0 7px 30px 0 $cBlue;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+
+
+    @media screen and (max-width: 576px) {
+        font-size: 22px;
+        padding: 13px 23px;
+        box-shadow: 0 7px 50px 0 $cOrange;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 19px;
+        padding: 15px 0px;
+        width: 80vw;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 375px) {
+        font-size: 17px;
+    }
+
+    @media screen and (max-width: 340px) {
+        font-size: 15px;
+    }
+}
+
+.success_password_update_show {
+    bottom: 90px;
+    opacity: 1;
+    visibility: visible;
+
+    @media screen and (max-width: 576px) {
+        font-size: 22px;
+        padding: 13px 23px;
+        box-shadow: 0 7px 50px 0 $cOrange;
+        bottom: 70px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 19px;
+        padding: 15px 0px;
+        width: 80vw;
+        text-align: center;
+        bottom: 50px;
+    }
+
+}

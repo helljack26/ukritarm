@@ -1,0 +1,1687 @@
+@import "./variables";
+@import "./mixin";
+
+@mixin customRadioWrapper {
+    padding: 25px 30px;
+    border-radius: 11px;
+    border: 1px solid $cBorderGray;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        border: 1px solid $cOrange;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding: 20px 25px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        padding: 20px;
+    }
+
+    @media screen and (max-width: 992px) {
+        &:hover {
+            border: 1px solid $cBorderGray;
+        }
+
+        &:active {
+            border: 1px solid $cOrange;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        padding: 25px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 16px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 10px;
+    }
+}
+
+@mixin customRadioButton {
+    @include boldText16;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+
+    &:hover>i {
+        &::before {
+            opacity: 0.8;
+            visibility: visible;
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 19px;
+    }
+
+    @media screen and (max-width: 700px) {
+        font-size: 17px;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 400px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 375px) {
+        font-size: 13px;
+    }
+
+    // Check icon
+    i {
+        width: 33px;
+        height: 33px;
+        margin-right: 21px;
+        border-radius: 4px;
+        outline: 1px solid $cBorderGray;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        &::before {
+            mask-size: contain;
+            mask-image: url(../icon/my_cart_check_icon.svg);
+            mask-repeat: no-repeat;
+            mask-position: center;
+            background-color: $cOrange;
+            content: "";
+            width: 18px;
+            height: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            transform: skewY(-13deg);
+        }
+
+        @media screen and (max-width: 1100px) {
+            width: 28px;
+            height: 28px;
+            margin-right: 17px;
+
+            &::before {
+                width: 15px;
+                height: 10px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            width: 35px;
+            height: 35px;
+            margin-right: 13px;
+
+            &::before {
+                width: 18px;
+                height: 12px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            width: 30px;
+            height: 30px;
+            margin-right: 14px;
+
+            &::before {
+                width: 14px;
+                height: 9px;
+            }
+        }
+    }
+
+
+}
+
+@mixin customRadioWrapperActive {
+    background: rgba(51, 174, 242, 0.1);
+
+    &:hover {
+        border: 1px solid $cBorderGray;
+    }
+}
+
+@mixin customRadioButtonActive {
+    pointer-events: none;
+
+    i {
+        background-color: $cBlue;
+
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+main {
+    @include mainContainer;
+    padding-top: 130px;
+    padding-bottom: 100px;
+    min-height: 80vh;
+
+    @media screen and (max-width: 1600px) {
+        padding-top: 120px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding-top: 90px;
+    }
+
+    @media screen and (max-width: 1120px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media screen and (max-width: 992px) {
+        padding-top: 50px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 900px) {
+        margin: 0px 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0px 30px;
+        padding-bottom: 100px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: 0px 20px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding-bottom: 120px;
+        margin: 0px 16px;
+    }
+
+    @media screen and (max-width: 375px) {
+        margin: 0px 10px;
+    }
+
+    // Main title
+    h1 {
+        @include headerText40;
+        font-family: $fHeaderRegular;
+        text-transform: uppercase;
+        margin-bottom: 21px;
+
+        @media screen and (max-width: 1280px) {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 992px) {
+            font-size: 34px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 40px;
+            margin-bottom: 21px;
+        }
+
+        @media screen and (max-width: 450px) {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 34px;
+        }
+    }
+
+    // Row
+    .mycart_row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 61.3% 36.7%;
+        justify-content: space-between;
+
+        @media screen and (max-width: 992px) {
+            grid-template-columns: 60% 38.5%;
+        }
+
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+        }
+
+        @media screen and (max-width: 450px) {
+            row-gap: 20px;
+        }
+
+        // User info / Delivery / Payment
+        .mycart_row_left {
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+
+            @media screen and (max-width: 1100px) {
+                row-gap: 16px;
+            }
+
+            @media screen and (max-width: 900px) {
+                row-gap: 25px;
+            }
+
+            @media screen and (max-width: 450px) {
+                row-gap: 20px;
+            }
+
+            .mycart_row_left_delivery_payment,
+            .mycart_row_left_user {
+                border: 1px solid #A5A5A5;
+                background-color: $cBlueFaded;
+                border-radius: 11px;
+                padding: 24px 26px;
+
+                @media screen and (max-width: 1280px) {
+                    padding: 30px 35px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    padding: 28px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    padding: 20px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    padding: 50px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 30px 40px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    padding: 20px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    padding: 30px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    padding: 20px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    padding: 20px 16px;
+                }
+            }
+
+            // My cart user info
+            .mycart_row_left_user {
+                h2 {
+                    @include headerWithIcon;
+
+                    @media screen and (max-width: 450px) {
+                        margin-bottom: 30px;
+                    }
+
+                    &::before {
+                        mask-image: url(../icon/my_cart_info_icon.svg);
+                    }
+                }
+
+                // Switch buttons
+                .mycart_row_left_user_buttons {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    column-gap: 10px;
+                    margin-bottom: 35px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-bottom: 30px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        margin-bottom: 50px;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        justify-content: space-between;
+                        margin-bottom: 45px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        margin-bottom: 35px;
+                    }
+
+                    button {
+                        @include plainText14;
+                        color: white;
+                        padding: 4px 7px;
+                        outline: 1px solid transparent;
+                        user-select: none;
+                        color: $cBlueLinks;
+                        transition: all 0.3s ease-in-out;
+                        white-space: nowrap;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: $cBlueOpacity;
+                            color: white;
+                        }
+
+                        @media screen and (max-width: 1100px) {
+                            padding: 2px 5px;
+                        }
+
+                        @media screen and (max-width: 992px) {
+
+                            &:hover,
+                            &:focus {
+                                background-color: transparent;
+                                color: white;
+                            }
+
+                            &:active {
+                                background-color: $cBlueOpacity;
+                                color: white;
+                            }
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 13px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 15px;
+                            padding: 4px 7px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 17px;
+                            padding: 5px 10px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            width: 50%;
+                            padding: 8px 6px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 15px;
+                            padding: 8px 10px;
+                        }
+                    }
+
+                    .user_buttons_item_active {
+                        outline: 1px solid $cOrange;
+                        color: white;
+                        pointer-events: none;
+                    }
+                }
+
+                // Form item fiz and yur inputs block
+                .mycart_row_left_user_item {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 47%);
+                    justify-content: space-between;
+
+                    @media screen and (max-width: 1600px) {
+                        margin-top: 34px;
+                    }
+
+                    @media screen and (max-width: 1400px) {
+                        margin-top: 28px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        margin-top: 20px;
+                    }
+
+                    @media screen and (max-width: 850px) {
+                        grid-template-columns: repeat(2, 47%);
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        grid-template-columns: 100%;
+                        margin-top: 40px;
+                        row-gap: 32px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        row-gap: 28px;
+                    }
+
+                    .mycart_row_left_user_item_col {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 30px;
+
+                        @media screen and (max-width: 1100px) {
+                            row-gap: 23px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            row-gap: 35px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            row-gap: 32px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            row-gap: 28px;
+                        }
+                    }
+
+                    .error_email {
+                        color: white;
+                        position: absolute;
+                        top: calc(100% + 4px);
+                        left: 0px;
+                    }
+                }
+
+                #yurydychna_osoba_tab {
+                    display: none;
+                }
+            }
+
+            // My cart delivery info
+            .mycart_row_left_delivery_payment {
+                display: flex;
+                flex-direction: column;
+                row-gap: 45px;
+
+                @media screen and (max-width: 1100px) {
+                    row-gap: 35px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    row-gap: 50px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    padding: 20px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    row-gap: 30px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    padding: 20px 16px;
+                }
+
+                .my_cart_delivery_block,
+                .my_cart_payment_block,
+                .my_cart_comment_block {
+                    padding: 0px 40px;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 17px;
+
+                    @media screen and (max-width: 1300px) {
+                        padding-right: 20px;
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        padding: 0;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        row-gap: 15px;
+                    }
+                }
+
+                // Delivery
+                .my_cart_delivery {
+                    .my_cart_delivery_header {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        h2 {
+                            @include headerWithIcon;
+
+                            &::before {
+                                mask-image: url(../icon/location_icon.svg);
+                                background-color: white;
+                                width: 21px;
+                                height: 21px;
+                                top: -1px;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                                &::before {
+                                    width: 19px;
+                                    height: 19px;
+                                }
+                            }
+                        }
+
+                        .my_cart_delivery_header_col {
+                            display: flex;
+                            align-items: center;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: flex-end;
+                            grid-gap: 7px;
+                            margin-bottom: 23px;
+                            margin-right: 42px;
+
+                            @media screen and (max-width: 1300px) {
+                                margin-right: 0px;
+                                margin-bottom: 20px;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                                margin-bottom: 16px;
+                            }
+
+                            span {
+                                @include boldText18;
+                                padding-bottom: 1px;
+                                line-height: 100%;
+                                color: white;
+
+                                @media screen and (max-width: 1400px) {
+                                    font-size: 17px;
+                                }
+
+                                @media screen and (max-width: 1100px) {
+                                    font-size: 15px;
+                                }
+
+                                @media screen and (max-width: 900px) {
+                                    font-size: 18px;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    font-size: 17px;
+                                }
+
+                                @media screen and (max-width: 450px) {
+                                    font-size: 15px;
+                                }
+
+                                @media screen and (max-width: 400px) {
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .nova_poshta_city_btn {
+                                color: $cOrange;
+                                border-bottom: 1px solid $cOrange;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    color: white;
+                                    border-bottom: 1px solid white;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    .my_cart_delivery_block {
+                        .my_cart_delivery_block_item {
+                            @include customRadioWrapper;
+
+                            button {
+                                @include customRadioButton;
+                            }
+
+                            // Company address
+                            .my_cart_delivery_block_item_address {
+                                @include boldText18;
+                                font-size: 17px;
+                                color: $cOrange;
+                                padding-top: 15px;
+                                margin-left: 54px;
+                                display: inline-block;
+                                user-select: none;
+
+                                @media screen and (max-width: 1100px) {
+                                    padding-top: 12px;
+                                    margin-left: 47px;
+                                    font-size: 15px;
+                                }
+
+                                @media screen and (max-width: 900px) {
+                                    font-size: 16px;
+                                    margin-left: 57px;
+                                }
+
+                                @media screen and (max-width: 700px) {
+                                    font-size: 15px;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    margin-left: 50px;
+                                    padding-top: 9px;
+                                }
+
+                                @media screen and (max-width: 450px) {
+                                    font-size: 14px;
+                                    margin-left: 2px;
+                                }
+                            }
+
+                            .my_cart_delivery_block_item_row {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-direction: row;
+                                width: 100%;
+                            }
+
+                        }
+
+                        .my_cart_delivery_block_item_active {
+                            @include customRadioWrapperActive;
+
+                            button {
+                                @include customRadioButtonActive;
+                            }
+                        }
+                    }
+                }
+
+                // Payment
+                .my_cart_payment {
+                    h2 {
+                        @include headerWithIcon;
+
+                        &::before {
+                            mask-image: url(../icon/my_cart_payment_icon.svg);
+                        }
+                    }
+
+                    .my_cart_payment_block {
+                        .my_cart_payment_block_radiobox {
+                            @include customRadioButton;
+                            @include customRadioWrapper;
+                        }
+
+                        .my_cart_payment_block_radiobox_active {
+                            @include customRadioButtonActive;
+                            @include customRadioWrapperActive;
+                            background-color: white;
+                            color: $cBlue;
+                        }
+
+                        .my_cart_payment_block_payment {
+                            padding: 25px 30px;
+                            border-radius: 11px;
+                            border: 1px solid $cBorderGray;
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 10px;
+
+                            @media screen and (max-width: 992px) {
+                                padding: 15px 20px;
+                            }
+
+                            @media screen and (max-width: 900px) {
+                                padding: 25px 30px;
+                            }
+
+                            @media screen and (max-width: 768px) {
+                                padding: 20px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                padding: 15px;
+                            }
+
+                            .payment_info {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                margin-bottom: 5px;
+                                column-gap: 5px;
+                                padding-left: 30px;
+
+                                @media screen and (max-width: 1100px) {
+                                    padding-left: 0;
+                                }
+
+                                @media screen and (max-width: 450px) {
+                                    row-gap: 5px;
+                                }
+
+                                span {
+                                    @include plainText14;
+                                    color: white;
+                                    white-space: nowrap;
+
+                                    &:first-of-type {
+                                        font-weight: bold;
+                                    }
+
+                                    @media screen and (max-width: 1100px) {
+                                        font-size: 13px;
+                                    }
+
+                                    @media screen and (max-width: 900px) {
+                                        font-size: 16px;
+                                    }
+
+                                    @media screen and (max-width: 768px) {
+                                        font-size: 14px;
+                                    }
+
+                                    @media screen and (max-width: 450px) {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .nova_poshta_payment_message {
+                            @include plainText16;
+                            color: $cOrange;
+                            display: none;
+                        }
+                    }
+                }
+
+                // Comment
+                .my_cart_comment {
+                    h2 {
+                        @include headerWithIcon;
+
+                        &::before {
+                            mask-image: url(../icon/my_cart_comment_icon.svg);
+                        }
+                    }
+
+                    .my_cart_comment_block {
+                        textarea {
+                            @include mainInput;
+                            resize: vertical;
+                            width: 100%;
+                            min-height: 100px;
+                            height: 185px;
+                            max-height: 220px;
+                            background-color: white;
+
+                            @media screen and (max-width: 768px) {
+                                height: 150px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                height: 120px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Side product list
+        aside {
+            display: flex;
+            flex-direction: column;
+            row-gap: 13px;
+
+            // Додоти ще продукцію
+            .aside_header {
+                border-radius: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                column-gap: 5px;
+                width: 100%;
+                height: 89px;
+                background-color: $cBlue;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $cBlueDark;
+                }
+
+                &:hover>span {
+                    color: $cOrange;
+                }
+
+                @media screen and (max-width: 1400px) {
+                    height: 80px;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    height: 75px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    height: 65px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    &:hover {
+                        background-color: $cBlue;
+                    }
+
+                    &:hover>span {
+                        color: white;
+                    }
+                }
+
+                @media screen and (max-width: 900px) {
+                    display: none;
+                }
+
+                span {
+                    @include boldText22;
+                    transition: all 0.3s ease-in-out;
+                    color: white;
+                    white-space: nowrap;
+
+                    &:first-of-type {
+                        color: $cBlueLinks;
+                    }
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: 20px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            // 
+            .aside_block {
+                background-color: $cBlue;
+                border-radius: 11px;
+                border: 1px solid #A5A5A5;
+                padding: 25px;
+                padding-bottom: 30px;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                position: sticky;
+                top: 24px;
+
+                @media screen and (max-width: 1200px) {
+                    top: 10px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    padding: 20px 20px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    padding: 20px 15px;
+                    top: 90px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    padding: 30px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 30px 20px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    padding: 30px 40px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    padding: 25px;
+                    padding-bottom: 30px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    padding: 20px;
+                    padding-bottom: 25px;
+                }
+
+                @media screen and (max-width:375px) {
+                    padding: 16px;
+                    padding-bottom: 20px;
+                    width: 100vw;
+                    margin-left: -10px;
+                }
+
+                h2 {
+                    @include headerWithIcon;
+
+                    @media screen and (max-width: 1200px) {
+                        margin-bottom: 18px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        margin-bottom: 35px;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        margin-bottom: 30px;
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        margin-bottom: 20px;
+                    }
+
+                    &::before {
+                        mask-image: url(../icon/my_cart_wheelbarrow_icon.svg);
+                    }
+                }
+
+                .aside_block_products {
+                    margin-top: 7px;
+                    margin-bottom: 10px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-top: 0px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        margin-bottom: 20px;
+                    }
+
+                    .header_first_right_basket_block_ul_empty {
+                        @include boldText20;
+                        color: white;
+                    }
+
+                    .header_first_right_basket_block_ul {
+                        overflow-y: auto;
+                        display: flex;
+                        flex-direction: column;
+                        padding-right: 10px;
+                        margin-right: -10px;
+                        max-height: 45vh;
+
+                        @media screen and (max-height: 650px) {
+                            max-height: 40vh;
+                        }
+
+                        @media screen and (max-width: 992px) {
+                            max-height: 37vh;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            max-height: fit-content;
+                        }
+
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                            border-radius: 4px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background: -webkit-gradient(linear,
+                                    left top,
+                                    left bottom,
+                                    from(#ffffff),
+                                    to(#ffffff));
+                            background: linear-gradient(180deg, #b7b7b7, #868686);
+                            border-radius: 4px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 4px;
+                            background: -webkit-gradient(linear,
+                                    left top,
+                                    left bottom,
+                                    from($cOrange),
+                                    to($cOrange));
+                            background: linear-gradient(180deg, $cOrange, $cOrange);
+                        }
+                    }
+
+                    .basket_block_ul_item {
+                        align-items: center;
+
+                        &:last-of-type {
+                            border-bottom: none;
+                        }
+
+                        @media screen and (max-width: 992px) {
+                            padding: 14px 0px;
+                            align-items: flex-start;
+
+                            &:first-of-type {
+                                padding-top: 0;
+
+                                .basket_block_ul_item_remove {
+                                    top: 3px;
+                                }
+                            }
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            column-gap: 15px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            align-items: center;
+                        }
+
+                        @media screen and (max-width: 700px) {
+                            padding: 20px 0px;
+                            column-gap: 20px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            column-gap: 15px;
+                            align-items: flex-start;
+                        }
+
+                        @media screen and (max-width: 480px) {
+                            row-gap: 15px;
+                            padding: 15px 0px;
+                        }
+
+                        @media screen and (max-width: 400px) {
+                            row-gap: 10px;
+                        }
+
+                        // Header basket image 
+                        .basket_block_ul_item_image {
+                            @media screen and (max-width: 1400px) {
+                                width: 76px;
+                                height: 76px;
+                                min-width: 76px;
+                                min-height: 76px;
+                            }
+
+                            @media screen and (max-width: 900px) {
+                                width: 70px;
+                                height: 70px;
+                                min-width: 70px;
+                                min-height: 70px;
+                            }
+
+                            @media screen and (max-width: 768px) {
+                                width: 60px;
+                                height: 60px;
+                                min-width: 60px;
+                                min-height: 60px;
+                            }
+
+                            @media screen and (max-width: 700px) {
+                                width: 100px;
+                                height: 100px;
+                                min-width: 100px;
+                                min-height: 100px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                width: 80px;
+                                height: 80px;
+                                min-width: 80px;
+                                min-height: 80px;
+                            }
+
+                            @media screen and (max-width: 480px) {
+                                width: 60px;
+                                height: 60px;
+                                min-width: 60px;
+                                min-height: 60px;
+                            }
+
+                            @media screen and (max-width: 400px) {
+                                width: 45px;
+                                height: 45px;
+                                min-width: 45px;
+                                min-height: 45px;
+                            }
+                        }
+
+                        // Header basket info 
+                        .basket_block_ul_item_info {
+                            @media screen and (max-width: 992px) {
+                                min-height: 76px;
+                            }
+
+                            @media screen and (max-width: 900px) {
+                                min-height: 70px;
+                                display: grid;
+                                grid-template-columns: 220px 1fr;
+                                column-gap: 20px;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-right: 35px;
+                            }
+
+                            @media screen and (max-width: 768px) {
+                                min-height: 60px;
+                            }
+
+                            @media screen and (max-width: 700px) {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                margin-right: 0px;
+                                row-gap: 10px;
+                                min-height: 100px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                min-height: 80px;
+                                row-gap: 15px;
+                            }
+
+                            @media screen and (max-width: 500px) {
+                                row-gap: 18px;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                                row-gap: 15px;
+                            }
+
+                            @media screen and (max-width: 400px) {
+                                row-gap: 15px;
+                            }
+
+                            // Name
+                            .basket_block_ul_item_info_name {
+                                &:hover {
+                                    color: white;
+                                }
+
+                                @media screen and (max-width: 992px) {
+                                    padding-right: 30px;
+
+                                    &:hover {
+                                        color: $cBlueLinks;
+                                    }
+
+                                    &:active {
+                                        color: white;
+                                    }
+                                }
+
+                                @media screen and (max-width: 900px) {
+                                    font-size: 16px;
+                                    padding-right: 0px;
+                                }
+
+                                @media screen and (max-width: 768px) {
+                                    font-size: 15px;
+                                }
+
+                                @media screen and (max-width: 700px) {
+                                    font-size: 18px;
+                                    padding-right: 45px;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    line-height: 120%;
+                                    padding-right: 40px;
+                                }
+
+                                @media screen and (max-width: 500px) {
+                                    padding-right: 35px;
+                                    font-size: 17px;
+                                }
+
+                                @media screen and (max-width: 480px) {
+                                    font-size: 16px;
+                                }
+
+                                @media screen and (max-width: 400px) {
+                                    font-size: 16px;
+                                }
+
+                                @media screen and (max-width: 375px) {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            .basket_block_ul_item_info_row {
+                                @media screen and (max-width: 900px) {
+                                    flex-direction: row-reverse;
+                                    justify-content: space-between;
+                                    column-gap: 10px;
+                                    width: 100%;
+                                }
+
+                                // Basket item price
+                                .basket_block_ul_item_info_price {
+                                    color: white;
+
+                                    @media screen and (max-width: 992px) {
+                                        font-size: 16px;
+                                    }
+
+                                    @media screen and (max-width: 900px) {
+                                        font-size: 20px;
+                                        line-height: 40px;
+                                        white-space: nowrap;
+                                    }
+
+                                    @media screen and (max-width: 768px) {
+                                        font-size: 18px;
+                                    }
+
+                                    @media screen and (max-width: 700px) {
+                                        font-size: 22px;
+                                        min-width: 37%;
+                                        text-align: right;
+                                    }
+
+                                    @media screen and (max-width: 600px) {
+                                        min-width: 42%;
+                                    }
+
+                                    @media screen and (max-width: 576px) {
+                                        min-width: 50%;
+                                        font-size: 24px;
+                                        min-width: fit-content;
+                                    }
+
+                                    @media screen and (max-width: 530px) {
+                                        font-size: 20px;
+                                    }
+
+                                    @media screen and (max-width: 450px) {
+                                        font-size: 18px;
+                                    }
+
+                                    @media screen and (max-width: 400px) {
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                .basket_block_ul_item_info_row_quantity {
+                                    @media screen and (max-width: 450px) {
+                                        justify-content: center;
+                                    }
+
+                                    .basket_block_ul_item_info_row_quantity_btn {
+                                        color: white;
+
+                                        @media screen and (max-width: 992px) {
+                                            padding: 0px 5px;
+                                        }
+
+                                        @media screen and (max-width: 900px) {
+                                            font-size: 30px;
+                                            padding: 0px 10px;
+                                        }
+
+                                        @media screen and (max-width: 768px) {
+                                            font-size: 28px;
+                                            padding: 0px 8px;
+                                        }
+                                    }
+
+                                    .basket_block_ul_item_info_row_quantity_input {
+                                        color: white;
+                                        border: 1px solid white;
+                                        background-color: transparent;
+
+                                        @media screen and (max-width: 992px) {
+                                            width: 45px;
+                                            height: 22px;
+                                        }
+
+                                        @media screen and (max-width: 900px) {
+                                            width: 50px;
+                                            height: 30px;
+                                            font-size: 18px;
+                                        }
+
+                                        @media screen and (max-width: 450px) {
+                                            font-size: 15px;
+                                        }
+
+                                        @media screen and (max-width: 400px) {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+
+                                .basket_block_ul_item_info_unit {
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        .basket_block_ul_item_remove {
+                            background-color: white;
+
+                            &:hover {
+                                background-color: $cOrange;
+                            }
+
+                            @media screen and (max-width: 992px) {
+                                mask-size: 15px 15px;
+                                top: 19px;
+                            }
+
+                            @media screen and (max-width: 700px) {
+                                mask-size: 20px 20px;
+                                top: 19px;
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                // mask-size: 25px 25px;
+                            }
+                        }
+                    }
+                }
+
+                .aside_block_products_row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-bottom: 25px;
+
+                    &:last-of-type {
+                        margin-bottom: 20px;
+                    }
+
+                    @media screen and (max-width: 1200px) {
+                        margin-bottom: 15px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        margin-bottom: 20px;
+
+                        &:last-of-type {
+                            margin-bottom: 40px;
+                        }
+                    }
+
+                    span {
+                        @include plainText16;
+                        color: $cBorderGray;
+
+                        @media (max-width: 1400px) {
+                            font-size: 16px;
+                        }
+
+                        @media screen and (max-width: 992px) {
+                            font-size: 14px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 22px;
+                        }
+
+                        @media screen and (max-width: 700px) {
+                            font-size: 18px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 16px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 15px;
+                        }
+
+                        @media screen and (max-width: 400px) {
+                            font-size: 14px;
+                        }
+
+                        @media screen and (max-width: 375px) {
+                            font-size: 13px;
+                        }
+                    }
+
+                    .aside_block_products_row_count,
+                    .aside_block_products_row_sum {
+                        color: white;
+
+                        @media screen and (max-width: 700px) {
+                            font-weight: bold;
+                            margin-bottom: -5px;
+                            display: inline-block;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            margin-bottom: -3px;
+                        }
+                    }
+
+                    .aside_block_products_row_count {
+                        font-size: 20px;
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 28px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            font-size: 26px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 22px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 20px;
+                        }
+
+                        @media screen and (max-width: 375px) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .aside_block_products_row_sum {
+                        font-size: 26px;
+
+                        @media screen and (max-width: 1400px) {
+                            font-size: 24px;
+                        }
+
+                        @media screen and (max-width: 1200px) {
+                            font-size: 22px;
+                        }
+
+                        @media screen and (max-width: 1100px) {
+                            font-size: 20px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            font-size: 28px;
+                        }
+
+                        @media screen and (max-width: 576px) {
+                            font-size: 24px;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            font-size: 22px;
+                        }
+
+                        @media screen and (max-width: 375px) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .aside_block_cart_add {
+                    @include mainButton;
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: $cBlue;
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: 17px;
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        font-size: 16px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 15px;
+                    }
+
+                    @media screen and (max-width: 992px) {
+                        padding: 15px 30px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        width: 50%;
+                        margin: 0 auto;
+                        font-size: 17px;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        width: fit-content;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        width: 100%;
+                        font-size: 16px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 15px;
+                    }
+                }
+
+                .aside_block_agreement {
+                    @include plainText14;
+                    color: whitesmoke;
+                    padding: 0px 10px;
+                    padding-top: 20px;
+                    line-height: 110%;
+                    text-align: center;
+
+                    @media screen and (max-width: 1280px) {
+                        padding: 0;
+                        padding-top: 20px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 12px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        font-size: 16px;
+                        padding-top: 30px;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        font-size: 15px;
+                        text-align: left;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 14px;
+                        padding-top: 20px;
+                    }
+
+                    a {
+                        display: inline-block;
+                        color: $cOrange;
+                        transition: all 0.3s ease-in-out;
+                        text-decoration: underline;
+
+                        &:hover {
+                            color: $cOrangeHover;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.required_label_error {
+    color: $cRed !important;
+}
+
+.required_input_error {
+    border: 1px solid $cRed !important;
+    outline: 2px solid $cRed !important;
+}
+
+.required_input_placeholder_error {
+    border: 1px solid $cRed !important;
+    outline: 2px solid $cRed !important;
+
+    &::placeholder {
+        color: $cRed !important;
+    }
+}
+
+
+
+.form_col_item {
+
+    // Input
+    .form_col_item_input {
+        @media screen and (max-width: 900px) {
+            padding: 11px;
+            font-size: 17px;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    // Label
+    .form_col_item_label {
+        @media screen and (max-width: 900px) {
+            padding: 11px;
+            font-size: 17px;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    // Label active 
+    .form_col_item_label_active_phone,
+    .form_col_item_label_active {
+        @media screen and (max-width: 900px) {
+            font-size: 14px;
+            top: -35px;
+            left: -11px;
+        }
+
+        @media screen and (max-width: 576px) {
+            top: -31px;
+        }
+    }
+}
+
+#redirect_to_thanks {
+    display: none;
+}

@@ -1,0 +1,93 @@
+@import "./variables";
+@import "./mixin";
+@import "../scss/animation";
+
+main {
+  @include mainContainer;
+  padding-top: 140px;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 1400px) {
+    padding-top: 105px;
+  }
+
+  @media screen and (max-width: 1120px) {
+    padding-top: 85px;
+    padding-bottom: 70px;
+  }
+
+  @media screen and (max-width: 992px) {
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 120px;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding-bottom: 140px;
+  }
+
+  // Main header
+  h1 {
+    @include headerTextDoubleWeight;
+    justify-content: center;
+  }
+
+  // Second title
+  .main_second_title {
+    @include boldText18;
+    font-family: $fHeader;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 65px;
+
+    @media screen and (max-width: 1400px) {
+      margin-top: 15px;
+      margin-bottom: 45px;
+    }
+
+    @media screen and (max-width: 1280px) {
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+
+    @media screen and (max-width: 1120px) {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 450px) {
+      font-size: 16px;
+      line-height: 120%;
+      margin-bottom: 25px;
+    }
+  }
+
+  // News list
+  .news_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 58px;
+
+    @media screen and (max-width: 1400px) {
+      row-gap: 48px;
+    }
+
+    @media screen and (max-width: 1280px) {
+      row-gap: 38px;
+    }
+
+    @media screen and (max-width: 450px) {
+      row-gap: 25px;
+    }
+  }
+}

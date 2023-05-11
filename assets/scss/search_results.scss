@@ -1,0 +1,265 @@
+@import "./variables";
+@import "./mixin";
+
+body {
+    background-color: $cBody;
+}
+
+main {
+    max-width: 1920px;
+    min-height: 70vh;
+    margin: 0 auto;
+    padding: 120px 80px;
+
+    @media screen and (max-width: 1500px) {
+        padding: 120px 60px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding: 85px 40px;
+    }
+
+    @media screen and (max-width: 1120px) {
+        padding: 80px 40px;
+    }
+
+    @media screen and (max-width: 992px) {
+        padding: 45px 25px;
+        padding-bottom: 80px;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding-bottom: 120px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 45px 20px;
+        padding-bottom: 140px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 45px 16px;
+        padding-bottom: 140px;
+    }
+
+    .search_header {
+        @include mainContainer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+        margin-bottom: 35px !important;
+
+        @media screen and (max-width: 450px) {
+            margin: 0 auto;
+            margin-bottom: 35px !important;
+        }
+
+        h1 {
+            @include headerText50;
+            text-transform: uppercase;
+            font-family: $fHeaderRegular;
+            line-height: 100%;
+            font-weight: 100;
+
+            @media screen and (max-width: 768px) {
+                font-size: 44px;
+            }
+
+            @media screen and (max-width: 576px) {
+                font-size: 42px;
+            }
+
+            @media screen and (max-width: 450px) {
+                font-size: 40px;
+            }
+
+            @media screen and (max-width: 400px) {
+                font-size: 36px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 32px;
+            }
+        }
+
+        .search_header_row {
+            box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.25);
+            background-color: white;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+
+            @media screen and (max-width: 992px) {
+                width: 60%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 75%;
+            }
+
+            @media screen and (max-width: 576px) {
+                width: 85%;
+            }
+
+            @media screen and (max-width: 450px) {
+                width: 95%;
+            }
+
+            #search_header_input {
+                @include mainInput;
+                background-color: white;
+                color: $cTextBlackMain;
+                font-size: 24px !important;
+                height: 52px;
+
+                @media screen and (max-width: 1300px) {
+                    font-size: 22px !important;
+                    padding: 11px;
+                    height: 48px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 20px !important;
+                    padding: 9px;
+                    height: 44px;
+                }
+            }
+
+            button {
+                min-width: 52px;
+                width: 52px;
+                height: 52px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                background-color: $cBlue;
+                transition: all 0.3s ease-in-out;
+
+                &::before {
+                    width: 45%;
+                    height: 45%;
+                    mask-size: contain;
+                    mask-image: url(../icon/search_icon.svg);
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    background-color: white;
+                    content: "";
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    background-color: $cBlueDark;
+                    box-shadow: 0 4px 17px 0 $cOrange;
+
+                    &::before {
+                        background-color: $cOrange;
+                    }
+                }
+
+                @media screen and (max-width: 1300px) {
+                    min-width: 48px;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    min-width: 44px;
+                    width: 44px;
+                    height: 44px;
+                }
+
+                @media screen and (max-width: 992px) {
+
+                    &:hover {
+                        background-color: $cBlue;
+                        box-shadow: none;
+
+                        &::before {
+                            background-color: white;
+                        }
+                    }
+
+                    &:active {
+                        background-color: $cBlueDark;
+                        box-shadow: 0 4px 17px 0 $cOrange;
+
+                        &::before {
+                            background-color: $cOrange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product_category_row {
+        width: 100%;
+
+        // Product results
+        .product_category_row_results {
+            position: relative;
+            width: 100%;
+            display: grid;
+            justify-content: space-between;
+            grid-auto-rows: minmax(min-content, max-content);
+            grid-template-columns: repeat(5, 20%);
+            border-left: 1px solid #E2E2E2;
+
+            @media screen and (max-width: 1600px) {
+                grid-template-columns: repeat(4, 25%);
+            }
+
+            @media screen and (max-width: 1200px) {
+                grid-template-columns: repeat(3, 33.3%);
+            }
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(2, 50%);
+            }
+
+            @media screen and (max-width: 450px) {
+                width: 100vw;
+                margin-left: -16px;
+            }
+
+        }
+
+        // Empty message
+        .product_category_row_results_block_empty {
+            @include headerText40;
+            white-space: nowrap;
+            text-align: center;
+            padding-top: 20px;
+            display: none;
+
+            @media screen and (max-width: 530px) {
+                white-space: normal;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            @media screen and (max-width: 400px) {
+                font-size: 30px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 28px;
+            }
+        }
+    }
+
+}
+
+.search-result-container .category-product {
+    border-bottom: 1px solid #ececec;
+    border-top: 0px;
+}

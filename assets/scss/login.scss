@@ -1,0 +1,1011 @@
+@import "./variables";
+@import "./mixin";
+
+@mixin accountHeaderButton {
+    width: 100%;
+    height: 89px;
+    margin-bottom: 13px;
+    border-radius: 8px;
+    border: 1px solid #A5A5A5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    pointer-events: none;
+
+    @media screen and (max-width: 1600px) {
+        height: 65px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        height: 55px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        margin-bottom: 10px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 25px;
+        pointer-events: visible;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:focus-visible,
+    &:active,
+    &:focus {
+        outline: none !important;
+        border: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        border: 1px solid #A5A5A5 !important;
+
+    }
+
+    span {
+        @include boldText20;
+        font-family: $fHeaderRegular;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding-left: 37px;
+        color: white;
+        position: relative;
+        font-weight: bold;
+
+        &::before {
+            width: 23px;
+            height: 23px;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            transition: all 0.3s ease-in-out;
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            padding-left: 30px;
+
+            &::before {
+                width: 18px;
+                height: 18px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 16px;
+            padding-left: 23px;
+
+            &::before {
+                width: 15px;
+                height: 15px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            font-size: 14px;
+            padding-left: 19px;
+
+            &::before {
+                width: 13px;
+                height: 13px;
+                top: 3px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 13px;
+            padding-left: 18px;
+
+            &::before {
+                width: 12px;
+                height: 12px;
+                top: 3px;
+            }
+        }
+    }
+}
+
+main {
+    @include mainContainer;
+    padding-top: 130px;
+    padding-bottom: 100px;
+
+    @media screen and (max-width: 1600px) {
+        padding-top: 120px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding-top: 105px;
+    }
+
+    @media screen and (max-width: 1120px) {
+        padding-top: 85px;
+        padding-bottom: 80px;
+    }
+
+    @media screen and (max-width: 992px) {
+        padding-top: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0px 70px;
+        padding-bottom: 120px;
+    }
+
+    @media screen and (max-width: 650px) {
+        margin: 0px 60px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: 0px 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding-bottom: 140px;
+    }
+
+    @media screen and (max-width: 400px) {
+        margin: 0px 25px;
+    }
+
+    @media screen and (max-width: 375px) {
+        margin: 0px 16px;
+    }
+
+    h1 {
+        @include headerText40;
+        font-family: $fHeaderRegular;
+        text-transform: uppercase;
+        margin-bottom: 21px;
+
+        @media screen and (max-width: 1280px) {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 1100px) {
+            font-size: 30px;
+        }
+    }
+
+    // Main headers
+    .account_headers {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 66.4% 31.7%;
+        justify-content: space-between;
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+            column-gap: 15px;
+        }
+
+        // Sign up header
+        .account_col_left_header {
+            @include accountHeaderButton;
+            background-color: $cBlueFaded;
+
+            .account_col_left_header_signup {
+                &::before {
+                    mask-image: url(../icon/sign_up_icon.svg);
+                    background-color: white;
+                }
+
+            }
+        }
+
+        // Sign in header
+        .account_col_right_header {
+            @include accountHeaderButton;
+            background-color: $cBlue;
+
+            .account_col_right_header_signin {
+                &::before {
+                    mask-image: url(../icon/logout_icon.svg);
+                    background-color: white;
+                }
+            }
+        }
+
+        .account_headers_active {
+            @media screen and (max-width: 768px) {
+                border: 1px solid #A5A5A5;
+                outline: 5px solid $cOrange !important;
+
+                &:focus {
+                    outline: 4px solid $cOrange !important;
+
+                }
+            }
+        }
+    }
+
+    // Wrapper row
+    .account_row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 66.4% 31.7%;
+        justify-content: space-between;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 100%;
+            justify-content: center;
+        }
+    }
+
+    // Left side form
+    .account_col_left_form {
+        border: 1px solid #A5A5A5;
+        background-color: $cBlueFaded;
+        border-radius: 8px;
+        padding: 40px;
+        padding-top: 23px;
+
+        @media screen and (max-width: 1600px) {
+            padding: 35px;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 1280px) {
+            padding: 30px;
+            padding-top: 15px;
+        }
+
+        @media screen and (max-width: 992px) {
+            padding: 25px;
+            padding-top: 15px;
+        }
+
+        @media screen and (max-width: 850px) {
+            padding: 20px;
+            padding-top: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 40px 70px;
+            padding-bottom: 60px;
+            display: none;
+
+        }
+
+        @media screen and (max-width: 650px) {
+            padding: 30px 50px;
+            padding-bottom: 40px;
+        }
+
+        @media screen and (max-width: 500px) {
+            padding: 30px;
+            padding-bottom: 40px;
+        }
+
+        @media screen and (max-width: 450px) {
+            padding: 30px 20px;
+        }
+
+        // Form message
+        .account_col_left_form_title {
+            @include plainText20;
+            color: white;
+            position: relative;
+            display: inline-block;
+            padding-left: 35px;
+            line-height: 23.44px;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 16px;
+                line-height: 21px;
+                padding-left: 30px;
+            }
+
+            @media screen and (max-width: 1280px) {
+                font-size: 14px;
+                line-height: 19px;
+                padding-left: 25px;
+            }
+
+            @media screen and (max-width: 992px) {
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 15px;
+                line-height: 20px;
+            }
+
+            @media screen and (max-width: 450px) {
+                font-size: 14px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 13px;
+            }
+
+            // Warn icon
+            .account_col_left_form_title_warn_icon {
+                width: 23px;
+                height: 23px;
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                transition: all 0.3s ease-in-out;
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 0px;
+                mask-image: url(../icon/warning_icon.svg);
+                background-color: white;
+
+                @media screen and (max-width: 1400px) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @media screen and (max-width: 1280px) {
+                    width: 17px;
+                    height: 17px;
+                }
+            }
+        }
+
+        .account_col_left_form_row {
+            width: 100%;
+            margin-top: 39px;
+            display: grid;
+            grid-template-columns: repeat(2, 45%);
+            justify-content: space-between;
+
+            @media screen and (max-width: 1600px) {
+                margin-top: 34px;
+            }
+
+            @media screen and (max-width: 1400px) {
+                margin-top: 28px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                margin-top: 20px;
+            }
+
+            @media screen and (max-width: 850px) {
+                grid-template-columns: repeat(2, 47%);
+            }
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 100%;
+                margin-top: 40px;
+                row-gap: 40px;
+            }
+
+            @media screen and (max-width: 450px) {
+                row-gap: 35px;
+            }
+
+            .account_col_left_form_col {
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                justify-content: space-between;
+
+                @media screen and (max-width: 1100px) {
+                    row-gap: 21px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    row-gap: 40px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    row-gap: 35px;
+                }
+            }
+        }
+
+        // Hint
+        .form_col_hint {
+            @include plainText16;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 5px;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            color: white;
+            background-color: #f21b1b38;
+            border: 1px solid #F21B1B;
+            border-radius: 13px;
+            padding: 11px 30px;
+
+            @media screen and (max-width: 1400px) {
+                padding: 8px 25px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                padding: 5px 15px;
+                font-size: 12px;
+                border-radius: 8px;
+            }
+
+            @media screen and (max-width: 768px) {
+                padding: 10px 30px;
+                font-size: 16px;
+                border-radius: 13px;
+            }
+
+            i {
+                color: #F21B1B;
+                padding-left: 3px;
+                padding-right: 5px;
+            }
+        }
+
+        // Agreement
+        .form_col_agreement {
+            color: white;
+            display: inline-block;
+            padding-top: 15px;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 14px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                font-size: 12px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 16px;
+            }
+
+            @media screen and (max-width: 576px) {
+                font-size: 15px;
+            }
+
+            @media screen and (max-width: 450px) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Right side form
+    .account_col_right_form {
+        background-color: $cBlue;
+        border-radius: 8px;
+        border: 1px solid #A5A5A5;
+        padding: 40px 30px;
+        height: fit-content;
+        display: inline-block;
+
+        @media screen and (max-width: 1400px) {
+            padding: 30px 25px;
+        }
+
+        @media screen and (max-width: 992px) {
+            padding: 25px 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 40px 70px;
+            padding-bottom: 60px;
+        }
+
+        @media screen and (max-width: 650px) {
+            padding: 30px 50px;
+            padding-bottom: 40px;
+        }
+
+        @media screen and (max-width: 450px) {
+            padding: 30px;
+            padding-bottom: 40px;
+        }
+
+        @media screen and (max-width: 375px) {
+            padding: 30px 20px;
+        }
+
+        .form_item_google {
+            border: 2px solid #2094FF;
+            background-color: #2093ff49;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 6px;
+            transition: all 0.3s ease-in-out;
+            width: fit-content;
+            padding: 7px 25px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+
+            @media screen and (max-width: 1400px) {
+                padding: 5px 20px;
+                margin-bottom: 40px;
+            }
+
+            @media screen and (max-width: 1100px) {
+                padding: 5px 15px;
+                margin-bottom: 30px;
+            }
+
+            @media screen and (max-width: 768px) {
+                padding: 10px 25px;
+                margin-bottom: 55px;
+            }
+
+            @media screen and (max-width: 400px) {
+                margin-bottom: 40px;
+            }
+
+            span {
+                @include plainText20;
+                color: white;
+                font-weight: bold;
+                transition: all 0.3s ease-in-out;
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 16px;
+                }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 12px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+
+            img {
+                @media screen and (max-width: 1280px) {
+                    width: 60px;
+                }
+
+                @media screen and (max-width: 1100px) {
+                    width: 50px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 65px;
+                }
+            }
+
+            &:hover {
+                background-color: #000b1649;
+                border: 2px solid $cOrange;
+
+                span {
+                    color: $cOrange;
+                }
+            }
+        }
+
+        .form_col_item_mb {
+            margin-bottom: 35px;
+
+            @media screen and (max-width: 1100px) {
+                margin-bottom: 23px;
+            }
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 45px;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin-bottom: 35px;
+            }
+        }
+
+        .form_col_error {
+            @include plainText16;
+            font-weight: bold;
+            margin: 0 auto;
+            width: fit-content;
+            padding: 7px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            color: white;
+            background-color: #f21b1b38;
+            border: 1px solid #F21B1B;
+            border-radius: 13px;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 450px) {
+                margin-bottom: 35px;
+
+            }
+        }
+
+        .form_col_link {
+            padding-top: 15px;
+            padding-bottom: 30px;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+
+            @media screen and (max-width: 1280px) {
+                padding-top: 10px;
+                padding-bottom: 25px;
+            }
+
+            @media screen and (max-width: 768px) {
+                padding-top: 15px;
+                padding-bottom: 30px;
+            }
+
+            button {
+                color: #A5A5A5;
+                transition: all 0.3s ease-in-out;
+                text-decoration: underline;
+
+                &:hover {
+                    color: $cOrange;
+                }
+
+                @media screen and (max-width: 1400px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    font-size: 12px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+.submit_login_disable {
+    pointer-events: none;
+}
+
+// Pass restore popup
+#pass_restore_popup {
+    position: fixed;
+    top: 0;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 999000000;
+
+    .pass_restore_popup_bg {
+        width: inherit;
+        height: inherit;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        z-index: -1;
+    }
+
+    .pass_restore_popup_wrapper {
+        padding: 40px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+
+        .pass_restore_popup_content {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+            max-width: 590px;
+
+            @media screen and (max-width: 576px) {
+                width: 85%;
+            }
+
+            @media screen and (max-width: 450px) {
+                width: 90%;
+            }
+
+            .pass_restore_popup_content_form,
+            .pass_restore_popup_content_header {
+                background-color: #fff;
+                border-radius: 6px;
+                box-shadow: 0 0 10px #000;
+            }
+
+            .pass_restore_popup_content_header {
+                width: 100%;
+                height: 70px;
+                padding-left: 32px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+
+                @media screen and (max-width: 1280px) {
+                    height: 60px;
+                    padding-left: 25px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    height: 70px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    height: 60px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    padding-left: 20px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    padding-left: 16px;
+                }
+
+                @media screen and (max-width: 375px) {
+                    height: 50px;
+                }
+
+                span {
+                    @include boldText24;
+                    line-height: 100%;
+                    font-family: $fRegular;
+                    font-weight: 600;
+                }
+
+                .pass_restore_popup_content_header_close {
+                    padding: 0px 32px;
+                    height: inherit;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: center;
+                    border: none;
+                    transition: all 0.3s ease-in-out;
+                    background-color: transparent;
+                    border-radius: 8px;
+
+                    &::before {
+                        content: '';
+                        transition: all 0.3s ease-in-out;
+                        width: 20px;
+                        height: 20px;
+                        mask-size: contain;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                        mask-image: url(../icon/cross_icon.svg);
+                        background-color: #525252;
+                    }
+
+                    &:hover {
+                        background-color: $cBlueOpacity;
+
+                        &::before {
+                            background-color: $cOrange;
+                        }
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        padding: 0px 25px;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        padding: 0px 20px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        padding: 0px 16px;
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        &::before {
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                }
+            }
+
+            .pass_restore_popup_content_form {
+                position: relative;
+                padding: 24px 35px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @media screen and (max-width: 1280px) {
+                    padding: 20px 25px;
+                    padding-bottom: 30px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    padding: 20px 20px;
+                    padding-bottom: 25px;
+                }
+
+                // Success window
+                .pass_restore_popup_content_form_success {
+                    display: none;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    right: 0px;
+                    width: inherit;
+                    height: inherit;
+
+                    .pass_restore_popup_content_form_success_block {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        row-gap: 20px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        background-color: white;
+                        border-radius: 8px;
+                        padding: 15px;
+
+                        h3 {
+                            @include boldText30;
+                            text-align: center;
+                            color: $cBlue;
+
+                            @media screen and (max-width: 450px) {
+                                font-size: 28px;
+                            }
+
+                            @media screen and (max-width: 375px) {
+                                font-size: 26px;
+                            }
+                        }
+
+                        p {
+                            @include plainText18;
+                            text-align: center;
+                            color: $cTextBlackSecondary;
+                        }
+                    }
+                }
+
+                span {
+                    @include plainText18;
+                    // white-space: nowrap;
+
+                    @media screen and (max-width: 576px) {
+                        white-space: normal;
+                        text-align: center;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 16px;
+                    }
+
+                    @media screen and (max-width: 375px) {
+                        font-size: 15px;
+                    }
+                }
+
+                #pass_restore_popup_content_form_input {
+                    @include mainInput;
+                    background-color: white;
+                    color: $cTextBlack;
+                    font-size: 20px;
+                    margin-top: 25px;
+                    margin-bottom: 12.5px;
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: 19px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        padding: 8px;
+                        font-size: 18px;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        padding: 11px;
+                        font-size: 17px;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        padding: 10px;
+                        font-size: 16px;
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        padding: 8px;
+                        font-size: 14px;
+                    }
+
+                    &::placeholder {
+                        color: $cTextBlackSecondary;
+                    }
+                }
+
+                .pass_restore_popup_content_form_error {
+                    color: $cRed;
+                }
+
+                .pass_restore_popup_content_form_button {
+                    @include mainButton;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: $cBlue;
+                    margin-top: 12.5px;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $cBlue;
+                        box-shadow: 0 4px 17px 0 $cBlueOpacity;
+                    }
+
+                    @media screen and (max-width: 1400px) {
+                        font-size: 17px;
+                    }
+
+                    @media screen and (max-width: 1280px) {
+                        font-size: 16px;
+                    }
+
+                    @media screen and (max-width: 1100px) {
+                        font-size: 15px;
+                    }
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 14px;
+                        padding: 13px 0px;
+                    }
+
+                    @media screen and (max-width: 375px) {
+                        font-size: 13px;
+                    }
+
+                }
+
+                #pass_restore_popup_content_form_input,
+                .pass_restore_popup_content_form_button {
+                    width: 90%;
+
+                    @media screen and (max-width: 450px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
